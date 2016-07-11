@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="formApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/angularjs-datetime-picker/angularjs-datetime-picker.css">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/angular/angular.min.js"></script>
+    <script src="/angularjs-datetime-picker/angularjs-datetime-picker.min.js"></script>
+    <script src="form.js"></script>
+</head>
+
+<body>
+<div class="container-fluid" ng-controller="formAppController as ctrl">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <form name="regForm" id="regForm" novalidate ng-submit="ctrl.submit()">
+                <legend><h1>Registration</h1></legend>
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Name" required
+                           ng-model="ctrl.name">
+                    <span class="help-block" ng-show="regForm.name.$dirty && regForm.name.$invalid">
+                    Please enter your name.
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Example@email.com"
+                           required
+                           ng-model="ctrl.email">
+                    <span class="help-block" ng-show="regForm.email.$dirty && regForm.email.$invalid">
+                    Please enter a valid email address.
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" id="password"
+                           placeholder="Please select a strong password"
+                           required ng-model="ctrl.password">
+                    <span class="help-block" ng-show="regForm.password.$dirty && regForm.password.$invalid">
+                    Please enter a password
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <input type="text" class="form-control" name="gender" id="gender" placeholder="Input..." required
+                           ng-model="ctrl.gender">
+                    <span class="help-block" ng-show="regForm.password.$dirty && regForm.password.$invalid">
+                    Please select your gender.
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input datetime-picker date-only class="form-control"
+                           date-format="dd/MM/yyyy" close-on-select="false" placeholder="dd/mm/yyyy"
+                           name="dob" id="dob" ng-model="ctrl.dob" required>
+                    <span class="help-block" ng-show="regForm.password.$dirty && regForm.password.$invalid">
+                    Please enter your date of birth.
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" name="address" id="address" placeholder="Address" required>
+                    <span class="help-block" ng-show="regForm.password.$dirty && regForm.password.$invalid">
+                    Please enter your address.
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" class="form-control" name="country" id="country" placeholder="Country" required>
+                    <span class="help-block" ng-show="regForm.password.$dirty && regForm.password.$invalid">
+                    Please enter your country.
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact">Contact</label>
+                    <input type="number" class="form-control" name="contact" id="contact"
+                           placeholder="Enter your 8 digit contact number"
+                           ng-pattern="ctrl.contactPattern" required>
+                    <span class="help-block" ng-show="regForm.contact.$dirty && regForm.contact.$invalid">
+                    Please enter your 8 digit contact number.
+                    </span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" ng-click="ctrl.eighteen()">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

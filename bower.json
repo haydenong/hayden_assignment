@@ -1,0 +1,20 @@
+{
+  "name": "assessment_form_hayden",
+  "description": "",
+  "main": "main.js",
+  "authors": [
+    "Hayden Ong <hayden.nimo@ymail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37"
+  }
+}
